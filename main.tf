@@ -1,10 +1,10 @@
 terraform {
   backend "remote" {
-    hostname     = "app.terraform.io"
-    organization = "rachel-test"
+    hostname = "app.terraform.io"
+    organization = "<YOUR-ORG-NAME>"
 
     workspaces {
-      name = "TF-Circle-Demo"
+      name = "learn-terraform-circleci"
     }
   }
 }
@@ -78,15 +78,4 @@ resource "aws_s3_bucket" "portfolio" {
 
 output "Endpoint" {
   value = aws_s3_bucket.portfolio.website_endpoint
-}
-
-terraform {
-  backend "remote" {
-    hostname = "app.terraform.io"
-    organization = "<YOUR-ORG-NAME>"
-
-    workspaces {
-      name = "learn-terraform-circleci"
-    }
-  }
 }
